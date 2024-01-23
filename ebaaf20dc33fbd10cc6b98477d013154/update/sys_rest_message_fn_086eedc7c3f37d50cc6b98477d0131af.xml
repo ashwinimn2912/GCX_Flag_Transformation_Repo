@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content/>
+        <function_name>Create account in SAP</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>SAP call [ Create account in SAP ]</qualified_name>
+        <rest_endpoint>https://14c1be38-6005-4091-8725-4e44a2a2440d.mock.pstmn.io</rest_endpoint>
+        <rest_message display_value="SAP call">6c2ee5c7c3f37d50cc6b98477d0131d0</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-22 09:56:19</sys_created_on>
+        <sys_id>086eedc7c3f37d50cc6b98477d0131af</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Create account in SAP</sys_name>
+        <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
+        <sys_update_name>sys_rest_message_fn_086eedc7c3f37d50cc6b98477d0131af</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-22 12:13:59</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

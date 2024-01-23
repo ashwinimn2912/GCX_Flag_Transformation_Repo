@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1123126_gcx_flag.CallSapEndpoint</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CallSapEndpoint</name>
+        <script><![CDATA[var CallSapEndpoint = Class.create();
+CallSapEndpoint.prototype = {
+    initialize: function() {
+        this.response = new sn_tmt_core.BaseObject();
+        this.request = new sn_tmt_core.BaseObject();
+    },
+
+    CreateReqPayload: function(account) {
+        var payload = {};
+        var accountDetails = {};
+        var locationsDetails = [];
+
+        accountDetails.org_name = account.getValue('name');
+        accountDetails.customer_pincode = account.getValue('zip');
+        accountDetails.customer_city = account.getValue('city');
+        accountDetails.customer_country = account.getValue('country');
+        accountDetails.customer_state = account.getValue('state');
+        accountDetails.currency = account.getValue('u_currency_code');
+
+        var acc_loc = new GlideRecord('account_address_relationship');
+        acc_loc.addQuery('account.sys_id', account.getValue('sys_id'));
+        acc_loc.query();
+
+        while (acc_loc.next()) {
+
+            var type = acc_loc.getValue('type');
+            var location = acc_loc.getValue('location');
+
+            var addressType = new GlideRecord('cmn_location_type');
+            addressType.addQuery('sys_id', type);
+            addressType.query();
+            if (addressType.next()) {
+                var adType = addressType.getValue('name');
+            }
+
+            var loc = new GlideRecord('cmn_location');
+            loc.addQuery('sys_id', location);
+            loc.query();
+            if (loc.next()) {
+                if (adType == 'Billing') {
+                    locationsDetails.push({
+                        type: adType,
+                        billing_account_no: account.getValue('number'),
+                        billing_org_name: account.getValue('name'),
+                        billing_state: loc.getValue('state'),
+                        billing_country: loc.getValue('country'),
+                        billing_pincode: loc.getValue('zip')
+                    });
+                } else {
+                    locationsDetails.push({
+                        type: adType,
+                        payer_account_no: account.getValue('number'),
+                        payer_org_name: account.getValue('name'),
+                        payer_state: loc.getValue('state'),
+                        payer_country: loc.getValue('country'),
+                        payer_pincode: loc.getValue('zip')
+                    });
+                }
+
+            }
+        }
+        payload.account = accountDetails;
+        payload.location = locationsDetails;
+        gs.info(JSON.stringify(payload));
+        return JSON.stringify(payload);
+
+    },
+
+    InsertSapExternalId: function(accountSysId, sapId) {
+        var custAccount = new GlideRecord('customer_account');
+        custAccount.addQuery('sys_id', accountSysId);
+        custAccount.query();
+        if (custAccount.next()) {
+            custAccount.u_sap_external_id = sapId;
+            custAccount.update();
+        }
+    },
+
+    type: 'CallSapEndpoint'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-23 03:55:37</sys_created_on>
+        <sys_id>45946d1bc333fd50cc6b98477d013176</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>CallSapEndpoint</sys_name>
+        <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
+        <sys_update_name>sys_script_include_45946d1bc333fd50cc6b98477d013176</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-23 04:48:03</sys_updated_on>
+    </sys_script_include>
+</record_update>

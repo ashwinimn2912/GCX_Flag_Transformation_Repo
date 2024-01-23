@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="INSERT_OR_UPDATE">
+        <operation>read</operation>
+        <source_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2024-01-23 04:51:25</sys_created_on>
+        <sys_id>4c427117c3b3fd50cc6b98477d01314e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>customer_account</sys_name>
+        <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
+        <sys_update_name>sys_scope_privilege_4c427117c3b3fd50cc6b98477d01314e</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2024-01-23 04:51:25</sys_updated_on>
+        <target_name>customer_account</target_name>
+        <target_scope display_value="Global">global</target_scope>
+        <target_type>sys_db_object</target_type>
+    </sys_scope_privilege>
+</record_update>

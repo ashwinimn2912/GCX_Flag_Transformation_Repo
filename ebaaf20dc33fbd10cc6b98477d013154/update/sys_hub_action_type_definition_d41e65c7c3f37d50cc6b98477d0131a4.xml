@@ -20,14 +20,14 @@
         <outputs/>
         <outputs/>
         <pre_compiled>false</pre_compiled>
-        <state>published</state>
+        <state>draft</state>
         <sys_class_name>sys_hub_action_type_definition</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-01-22 09:54:39</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>d41e65c7c3f37d50cc6b98477d0131a4</sys_id>
-        <sys_mod_count>54</sys_mod_count>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>Call SAP endpoint</sys_name>
         <sys_overrides/>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
@@ -35,7 +35,7 @@
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_d41e65c7c3f37d50cc6b98477d0131a4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-01-23 04:52:06</sys_updated_on>
+        <sys_updated_on>2024-01-24 06:12:36</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -258,18 +258,6 @@
         <value>{{action.account_address.type}}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>application</field>
-        <id>5fd3fd83c3377d50cc6b98477d0131b4</id>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-01-22 10:19:59</sys_created_on>
-        <sys_id>abd3fd83c3377d50cc6b98477d0131f8</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-01-22 10:19:59</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>location</field>
         <id>5fd3fd83c3377d50cc6b98477d0131b4</id>
         <sys_created_by>admin</sys_created_by>
@@ -280,18 +268,6 @@
         <sys_updated_on>2024-01-22 10:20:44</sys_updated_on>
         <table>var__m_sys_hub_step_ext_input_5fd3fd83c3377d50cc6b98477d0131b4</table>
         <value>{{action.location}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>script</field>
-        <id>5fd3fd83c3377d50cc6b98477d0131b4</id>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-01-22 10:19:59</sys_created_on>
-        <sys_id>63d3fd83c3377d50cc6b98477d0131f9</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-01-22 10:19:59</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
     </sys_element_mapping>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_5fd3fd83c3377d50cc6b98477d0131b4^id=5fd3fd83c3377d50cc6b98477d0131b4"/>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=5fd3fd83c3377d50cc6b98477d0131b4"/>
@@ -727,7 +703,7 @@
         <sys_created_on>2024-01-22 11:19:37</sys_created_on>
         <sys_id>c9818e4fc3777d50cc6b98477d01315b</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>responsebody</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -750,7 +726,7 @@
         <sys_created_on>2024-01-22 11:19:37</sys_created_on>
         <sys_id>c9818e4fc3777d50cc6b98477d013166</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>response</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -773,7 +749,7 @@
         <sys_created_on>2024-01-22 11:19:37</sys_created_on>
         <sys_id>c9818e4fc3777d50cc6b98477d013170</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>reqbody</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -796,7 +772,7 @@
         <sys_created_on>2024-01-22 11:01:01</sys_created_on>
         <sys_id>d04d3547c3777d50cc6b98477d0131dd</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>id</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -1353,7 +1329,7 @@
         <sys_created_on>2024-01-22 10:02:54</sys_created_on>
         <sys_id>c5ff25cbc3f37d50cc6b98477d0131d8</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>account</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -1378,7 +1354,7 @@
         <sys_created_on>2024-01-22 12:16:08</sys_created_on>
         <sys_id>387e460bc3f77d50cc6b98477d0131bf</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>responsebody</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -1401,7 +1377,7 @@
         <sys_created_on>2024-01-22 12:16:08</sys_created_on>
         <sys_id>387e460bc3f77d50cc6b98477d0131c3</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>id</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -1424,7 +1400,7 @@
         <sys_created_on>2024-01-22 12:16:08</sys_created_on>
         <sys_id>387e460bc3f77d50cc6b98477d0131c7</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>reqbody</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -1447,7 +1423,7 @@
         <sys_created_on>2024-01-22 09:59:42</sys_created_on>
         <sys_id>823f2d4bc3f37d50cc6b98477d01316a</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Don't Treat as Error</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -1470,7 +1446,7 @@
         <sys_created_on>2024-01-22 09:59:41</sys_created_on>
         <sys_id>8e3f2d4bc3f37d50cc6b98477d013163</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Action Status</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -1729,18 +1705,6 @@
         <value>{{action.account_address.type}}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>application</field>
-        <id>7091028fc3777d50cc6b98477d0131c2</id>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-01-22 11:19:53</sys_created_on>
-        <sys_id>f891428fc3777d50cc6b98477d013111</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-01-22 11:19:53</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>location</field>
         <id>7091028fc3777d50cc6b98477d0131c2</id>
         <sys_created_by>admin</sys_created_by>
@@ -1751,18 +1715,6 @@
         <sys_updated_on>2024-01-22 11:19:53</sys_updated_on>
         <table>var__m_sys_hub_step_ext_input_7091028fc3777d50cc6b98477d0131c2</table>
         <value>{{action.location}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>script</field>
-        <id>7091028fc3777d50cc6b98477d0131c2</id>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-01-22 11:19:53</sys_created_on>
-        <sys_id>b091428fc3777d50cc6b98477d013112</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-01-22 11:19:53</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
     </sys_element_mapping>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_7091028fc3777d50cc6b98477d0131c2^id=7091028fc3777d50cc6b98477d0131c2"/>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=7091028fc3777d50cc6b98477d0131c2"/>
@@ -2198,7 +2150,7 @@
         <sys_created_on>2024-01-22 11:19:53</sys_created_on>
         <sys_id>3491028fc3777d50cc6b98477d0131df</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>responsebody</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -2221,7 +2173,7 @@
         <sys_created_on>2024-01-22 11:19:53</sys_created_on>
         <sys_id>3491028fc3777d50cc6b98477d0131e2</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>id</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -2244,7 +2196,7 @@
         <sys_created_on>2024-01-22 11:19:53</sys_created_on>
         <sys_id>7891428fc3777d50cc6b98477d01310a</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>response</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -2267,7 +2219,7 @@
         <sys_created_on>2024-01-22 11:19:53</sys_created_on>
         <sys_id>7891428fc3777d50cc6b98477d01310d</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>reqbody</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -2824,7 +2776,7 @@
         <sys_created_on>2024-01-22 10:03:05</sys_created_on>
         <sys_id>73ffa5cbc3f37d50cc6b98477d013161</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>account</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -2849,7 +2801,7 @@
         <sys_created_on>2024-01-23 04:52:06</sys_created_on>
         <sys_id>0662b517c3b3fd50cc6b98477d0131fb</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>responsebody</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -2872,7 +2824,7 @@
         <sys_created_on>2024-01-22 09:59:42</sys_created_on>
         <sys_id>5a3f2d4bc3f37d50cc6b98477d0131b7</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Don't Treat as Error</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -2895,7 +2847,7 @@
         <sys_created_on>2024-01-23 04:52:06</sys_created_on>
         <sys_id>8262f517c3b3fd50cc6b98477d013103</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>reqbody</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -2918,7 +2870,7 @@
         <sys_created_on>2024-01-23 04:52:06</sys_created_on>
         <sys_id>c262b517c3b3fd50cc6b98477d0131ff</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>id</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
@@ -2941,7 +2893,7 @@
         <sys_created_on>2024-01-22 09:59:42</sys_created_on>
         <sys_id>de3f2d4bc3f37d50cc6b98477d0131b1</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Action Status</sys_name>
         <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>

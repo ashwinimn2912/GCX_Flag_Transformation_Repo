@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1123126_gcx_flag.CreateProductOfferingCharacteristics</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CreateProductOfferingCharacteristics</name>
+        <script><![CDATA[var CreateProductOfferingCharacteristics = Class.create();
+CreateProductOfferingCharacteristics.prototype = {
+    initialize: function() {
+        this.response = new sn_tmt_core.BaseObject();
+        this.request = new sn_tmt_core.BaseObject();
+        this.records = [];
+        this.charrecords = [];
+    },
+
+    CreateProdOfferingChars: function(prodOff_sysid) {
+        var prodOff = new GlideRecord('sn_prd_pm_product_offering');
+        prodOff.addQuery('sys_id', prodOff_sysid);
+        prodOff.query();
+
+        if (prodOff.next()) {
+            var prodoff_name = prodOff.getValue('name');
+            var prodoff_family = prodOff.getValue('u_family');
+            var prodoff_active = prodOff.getValue('status');
+            var prodoff_descp = prodOff.getValue('description');
+            var prod_sysid = prodOff.getValue('sys_id');
+
+            var isActive = prodoff_active === 'published';
+
+            this.records.push({
+                attributes: {
+                    "type": "Product2",
+                    "referenceId": prod_sysid
+                },
+                Name: prodoff_name,
+                Family: prodoff_family,
+                IsActive: isActive,
+                Entity__c: "FLAG",
+                Description: prodoff_descp,
+                Reference_Id__c: prod_sysid,
+                Product_Property__r: {
+                    records: this.charrecords
+                }
+            });
+        }
+
+        var prodoff_char = new GlideRecord('sn_prd_pm_product_offering_characteristic');
+        prodoff_char.addQuery('product_offering', prodOff_sysid);
+        prodoff_char.query();
+
+        var charOptionsMap = {};
+        var charNameMap = {};
+        var charDataTypeMap = {};
+        var charSourceMap = {};
+        var charDescriptionMap = {};
+        var charReferenceIdMap = {};
+
+        while (prodoff_char.next()) {
+            var char_sysid = prodoff_char.getValue('characteristic');
+            var charoption_sysid = prodoff_char.getValue('characteristic_option');
+            var charinput = prodoff_char.getValue('is_customer_input_required');
+
+            var source_input = charinput === "1" ? "customer input" : "";
+
+            var char_table = new GlideRecord('sn_prd_pm_characteristic');
+            char_table.addQuery('sys_id', char_sysid);
+            char_table.query();
+
+            if (char_table.next()) {
+                var charname = char_table.getValue('name');
+                var char_datatype = char_table.getValue('input_type');
+                var char_desc = char_table.getValue('description');
+
+                charDataTypeMap[char_sysid] = char_datatype;
+                charNameMap[char_sysid] = charname;
+                charSourceMap[char_sysid] = source_input;
+                charDescriptionMap[char_sysid] = char_desc;
+
+               // var refName = charname.replace(/ /g, '_');
+				var refName = charname.replace(/[^a-zA-Z0-9_]/g, '_');
+                charReferenceIdMap[char_sysid] = prod_sysid + "_" + refName;
+            }
+
+            var char_option = '';
+
+            if (charoption_sysid) {
+                var charoption_table = new GlideRecord('sn_prd_pm_characteristic_option');
+                charoption_table.addQuery('sys_id', charoption_sysid);
+                charoption_table.query();
+
+                if (charoption_table.next()) {
+                    char_option = charoption_table.getValue('option');
+                }
+            }
+
+            if (!charOptionsMap[char_sysid]) {
+                charOptionsMap[char_sysid] = char_option;
+            } else {
+                charOptionsMap[char_sysid] += char_option ? (',' + char_option) : '';
+            }
+        }
+
+        for (char_sysid in charReferenceIdMap) {
+            this.charrecords.push({
+                attributes: {
+                    "type": "Product_Property__c",
+                    "referenceId": charReferenceIdMap[char_sysid]
+                },
+                Data_Type__c: charDataTypeMap[char_sysid],
+                Characteristic_Value__c: charOptionsMap[char_sysid],
+                Source__c: charSourceMap[char_sysid],
+                Characteristic_Name__c: charNameMap[char_sysid],
+                Description__c: charDescriptionMap[char_sysid],
+                Reference_Id__c: charReferenceIdMap[char_sysid]
+            });
+        }
+        var outputObject = this.records;
+
+        gs.info(JSON.stringify(outputObject));
+        return JSON.stringify(outputObject);
+    },
+
+    type: 'CreateProductOfferingCharacteristics'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-24 05:54:11</sys_created_on>
+        <sys_id>e13a8be797ff3d107b2abf8fe153af18</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>CreateProductOfferingCharacteristics</sys_name>
+        <sys_package display_value="GCX Flag Transformation" source="x_1123126_gcx_flag">ebaaf20dc33fbd10cc6b98477d013154</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="GCX Flag Transformation">ebaaf20dc33fbd10cc6b98477d013154</sys_scope>
+        <sys_update_name>sys_script_include_e13a8be797ff3d107b2abf8fe153af18</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-24 05:55:40</sys_updated_on>
+    </sys_script_include>
+</record_update>
